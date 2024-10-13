@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ComingBack</string>
+    <string name="not_gate">The logic of the NOT gate (otherwise known as an inverter) is that it simply reverses whatever signal it receives. In other words, if it receives an \"on\" signal, it outputs an \"off\" signal; and vice versa, it outputs \"on\" when it receives an \"off\" signal.</string>
+    <string name="and_gate">The AND gate is simply the opposite of the NAND gate. In other words, it outputs an "on" signal only when both of its inputs receive an "on" signal. This can be achieved by simply placing an inverter after a NAND gate.</string>
+    <string name="nor_gate">The logic of the NOR gate is simply the opposite of the OR gate. In other words, it outputs an "on" signal only when neither of its inputs receives an "on" signal. This can be achieved by inverting both input and output of a NAND gate.</string>
+    <string name="or_gate">Much like the NAND/AND relation, NOR/OR are simply opposites of each other. The OR gate will output an "on" signal as long as any of its inputs are on. This can be achieved by simply removing the inverter after the NAND in the NOR gate schematic.</string>
+    <string name="always_on_gate">As its name suggests, the logic of the Always On always outputs an "on" signal. This can be achieved by using a NOT gate tied to one of the inputs of an OR gate.</string>
+    <string name="second_tick_gate">Again, as its name suggests, the logic of the Second Tick only outputs an "on" signal during the second tick of tests. In other words, when its first input receives an "on" signal and its second input receives an "off" signal. This can be achieved by using a NOT gate tied to the second input of an AND gate.</string>
+    <string name="xor_gate">Slightly different from the OR gate, the XOR gate still outputs "on" when either of its inputs receives an "on" signal; however, it outputs an "off" when both inputs receive an "on" signal. In other words, OR > AND &lt; NAND.</string>
+</resources>
