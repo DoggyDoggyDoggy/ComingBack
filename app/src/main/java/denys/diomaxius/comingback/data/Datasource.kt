@@ -3,10 +3,10 @@ package denys.diomaxius.comingback.data
 import denys.diomaxius.comingback.R
 import denys.diomaxius.comingback.model.Guide
 
-val NUMBER_OF_GUIDES = Datasource.guides.size
+val NUMBER_OF_GUIDES = Datasource.basicLogicGuides.size
 
 object Datasource {
-    val guides = listOf(
+    val basicLogicGuides = listOf(
         Guide("NOT Gate", R.drawable.not_gate, R.string.not_gate),
         Guide("AND Gate", R.drawable.and_gate, R.string.and_gate),
         Guide("NOR Gate", R.drawable.nor_gate, R.string.nor_gate),

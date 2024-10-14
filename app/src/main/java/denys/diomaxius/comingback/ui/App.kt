@@ -40,27 +40,37 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import denys.diomaxius.comingback.data.Datasource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 
 @Composable
-fun App() {
+fun App(
+    appViewModel: AppViewModel = viewModel()
+) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
+    
+    val appUiState by appViewModel.uiState.collectAsState()
 
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
             ModalDrawerSheet {
-                Text("Drawer title", modifier = Modifier.padding(16.dp))
+                Text("Menu", modifier = Modifier.padding(16.dp))
                 Divider()
                 NavigationDrawerItem(
-                    label = { Text(text = "Drawer Item") },
+                    label = { Text(text = "Screen 1") },
                     selected = false,
-                    onClick = { /*TODO*/ }
+                    onClick = { appViewModel.change_page("BASIC LOGIC") }
                 )
-                // ...other drawer items
+
+                NavigationDrawerItem(
+                    label = { Text(text = "Screen 2") },
+                    selected = false,
+                    onClick = { appViewModel.change_page("EMPTY") }
+                )
             }
         }
     ) {
@@ -72,7 +82,21 @@ fun App() {
                 )
             }
         ) {
-            GuideScreen(modifier = Modifier.padding(it))
+            if (appUiState.page == "BASIC LOGIC") {
+                GuideScreen(
+                    modifier = Modifier.padding(it),
+                    guideViewModel = GuideViewModel(Datasource.basicLogicGuides)
+                )
+            }
+
+            if (appUiState.page == "EMPTY") {
+                Text(
+                    modifier = Modifier.padding(it).fillMaxSize(),
+                    text = "Empty",
+                    fontSize = 32.sp
+                )
+            }
+            
         }
     }
 }
@@ -93,11 +117,13 @@ fun TopBar(
         Icon(
             modifier = Modifier
                 .padding(start = 15.dp)
-                .clickable {  scope.launch {
-                    drawerState.apply {
-                        if (isClosed) open() else close()
+                .clickable {
+                    scope.launch {
+                        drawerState.apply {
+                            if (isClosed) open() else close()
+                        }
                     }
-                }},
+                },
             imageVector = Icons.Outlined.Menu,
             contentDescription = "",
             tint = Color.White
@@ -118,7 +144,7 @@ fun TopBar(
 @Composable
 fun GuideScreen(
     modifier: Modifier,
-    guideViewModel: GuideViewModel = viewModel()
+    guideViewModel: GuideViewModel
 ) {
     val guideUiState by guideViewModel.uiState.collectAsState()
 

@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class GuideViewModel : ViewModel() {
+class GuideViewModel(guides: List<Guide>) : ViewModel() {
 
 
-    private var guideList: List<Guide> = Datasource.guides
+    private var guideList: List<Guide> = guides
 
     private var guideNumber: Int = 0
 
