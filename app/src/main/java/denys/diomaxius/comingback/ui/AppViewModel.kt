@@ -9,7 +9,7 @@ class AppViewModel:ViewModel() {
     private val _uiState = MutableStateFlow(AppUiState())
     val uiState: StateFlow<AppUiState> = _uiState.asStateFlow()
 
-    fun change_page(page: String) {
+    fun changePage(page: String) {
         _uiState.value = AppUiState(page = page)
     }
 }

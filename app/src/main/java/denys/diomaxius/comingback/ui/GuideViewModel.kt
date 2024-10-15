@@ -2,7 +2,6 @@ package denys.diomaxius.comingback.ui
 
 import androidx.lifecycle.ViewModel
 import denys.diomaxius.comingback.data.Datasource
-import denys.diomaxius.comingback.data.NUMBER_OF_GUIDES
 import denys.diomaxius.comingback.model.Guide
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +24,7 @@ class GuideViewModel(guides: List<Guide>) : ViewModel() {
     val uiState: StateFlow<GuideUiState> = _uiState.asStateFlow()
 
     fun nextGuide() {
-        if (NUMBER_OF_GUIDES > guideNumber + 1) {
+        if (guideList.size > guideNumber + 1) {
             guideNumber++
             _uiState.value = GuideUiState(
                 topic = guideList[guideNumber].topic,

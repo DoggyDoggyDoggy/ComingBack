@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ComingBack</string>
+
+    <!-- Basic Logic -->
     <string name="not_gate">The logic of the NOT gate (otherwise known as an inverter) is that it simply reverses whatever signal it receives. In other words, if it receives an \"on\" signal, it outputs an \"off\" signal; and vice versa, it outputs \"on\" when it receives an \"off\" signal.</string>
     <string name="and_gate">The AND gate is simply the opposite of the NAND gate. In other words, it outputs an "on" signal only when both of its inputs receive an "on" signal. This can be achieved by simply placing an inverter after a NAND gate.</string>
     <string name="nor_gate">The logic of the NOR gate is simply the opposite of the OR gate. In other words, it outputs an "on" signal only when neither of its inputs receives an "on" signal. This can be achieved by inverting both input and output of a NAND gate.</string>
@@ -7,4 +9,21 @@
     <string name="always_on_gate">As its name suggests, the logic of the Always On always outputs an "on" signal. This can be achieved by using a NOT gate tied to one of the inputs of an OR gate.</string>
     <string name="second_tick_gate">Again, as its name suggests, the logic of the Second Tick only outputs an "on" signal during the second tick of tests. In other words, when its first input receives an "on" signal and its second input receives an "off" signal. This can be achieved by using a NOT gate tied to the second input of an AND gate.</string>
     <string name="xor_gate">Slightly different from the OR gate, the XOR gate still outputs "on" when either of its inputs receives an "on" signal; however, it outputs an "off" when both inputs receive an "on" signal. In other words, OR > AND &lt; NAND.</string>
+
+    <!-- Double Trouble -->
+    <string name="double_trouble">The logic for Double Trouble is that it simply requires you to output an "on" signal when at least two of the inputs are receiving an "on" signal.</string>\
+
+    <string name="odd_number_of_signals">Much like the previous level, this one requires an "on" signal output when the inputs receive a particular number of "on" signals. The difference here is that we only output an "on" signal when an odd number of inputs receive an "on" signal. In other words, when either 1 or 3 inputs are "on" we output an "on" signal.</string>
+    <string name="counting_signals">As the name suggests, this level requires us to count the input signals. The output component has 3 nodes on it and operates much like a Byte Maker; the first (top) node has a value of 1, the second (middle) has a value of 2, and the third (bottom) has a value of 4.</string>
+    <string name="half_adder">As the name suggests, this level performs addition using the inputs. Everything is computed in binary; meaning that "1+1=2" is written as "01+01=10" with one output called "SUM" being the main value (for if the value is 0 or 1) and the other output called "CAR" being the carry (for if the value is 2).</string>
+    <string name="double_the_number">As the name suggests, in this level you simply have to double the value of whatever the input is. With the provided Byte Splitter/Byte Maker components, this is extremely easy; as you can simply pass each bit to its doubled value bit (i.e. 1 to 2, 2 to 4, 4 to 8, and so on).</string>
+    <string name="full_adder">Much like Half Adder, this level performs addition using the inputs. The difference is that it uses a total of three inputs/bits; so, now we can have a value of three with the &quot;SUM&quot; output still being for values of 0 (off) or 1 (on) and the &quot;CAR&quot; output still being the carry for when we have a value of 2 (when it\'s on). Due to the composition of the components, both &quot;SUM&quot; and &quot;CAR&quot; can be on at the same time, making the total value of three.</string>
+    <string name="byte_or">Much like the name suggests, this level simply ORs each pair of corresponding bits within two byte values.</string>
+    <string name="byte_not">Much like the name suggests, this level simply NOTs each individual bit within a byte value.</string>
+    <string name="adding_bytes">Much like the name suggests, this level adds together two byte values using Full Adder components for each pair of bits.</string>
+    <string name="signed_negator">In order to understand the logic of this level, you need to understand 2\'s Complement. Basically, 2\'s Complement simply inverts a value, and then adds one to it in order to get the negative of the original value. So, 00100101 (a value of 15) is first negated, making it 11011010, and then has one added to it, making it 11011011 (the binary equivalent of -15).</string>
+    <string name="one_bit_decoder">Here, the problem is to have one output turned on when the input is off, and have the other output turned on when the input is on. The solution is to incorporate a NOT gate on one output and have a straight feed to the other.</string>
+    <string name="three_bit_decoder">Here, we have a similar problem to the previous level; however, instead of choosing between 2 outputs using a single input, we have to choose between eight outputs using three inputs.</string>
+    <string name="logic_engine">Here is where we put everything together. We incorporate decoders and byte-gates to create a logic engine capable of doing OR, NOR, AND, and NAND operations on two different byte arguments.</string>
+
 </resources>
