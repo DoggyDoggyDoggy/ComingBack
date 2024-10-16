@@ -37,4 +37,21 @@ object Datasource {
         Guide("3 bit decoder", R.drawable.three_bit_decoder, R.string.three_bit_decoder),
         Guide("Logic Engine", R.drawable.logic_engine, R.string.logic_engine)
     )
+
+    val memoryGuides = listOf(
+        Guide("Circular Dependency", R.drawable.circular_dependency, R.string.double_trouble),
+        Guide("Delayed Lines", R.drawable.delayed_lines, R.string.double_trouble),
+        Guide("Odd Ticks", R.drawable.odd_ticks, R.string.double_trouble),
+        Guide("Bit Switch", R.drawable.bit_switch, R.string.double_trouble),
+        Guide("Bit Inverter", R.drawable.bit_inverter, R.string.double_trouble),
+        Guide("Input Selector", R.drawable.input_selector, R.string.double_trouble),
+        Guide("The Bus", R.drawable.the_bus, R.string.double_trouble),
+        Guide("Saving Bytes", R.drawable.saving_bytes, R.string.double_trouble),
+        Guide("Little Box", R.drawable.little_box, R.string.double_trouble),
+        Guide("Counter", R.drawable.counter, R.string.double_trouble),
+    )
+
+    val cpuArchitectureGuides = listOf(
+        Guide("Arithmetic Engine", R.drawable.artihmetic_engine, R.string.arithmetic_engine),
+    )
 }

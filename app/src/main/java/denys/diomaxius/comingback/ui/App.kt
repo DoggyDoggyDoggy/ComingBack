@@ -63,7 +63,9 @@ fun App(
                 Text("Menu", modifier = Modifier.padding(16.dp))
                 Divider()
                 NavigationDrawerItem(
-                    modifier = Modifier.padding(horizontal = 5.dp, vertical = 5.dp),
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .padding(top = 5.dp),
                     colors = NavigationDrawerItemDefaults.colors(
                         unselectedContainerColor = Color(0xFF1B2838)
                     ),
@@ -77,7 +79,9 @@ fun App(
                     onClick = { appViewModel.changePage(GuideChapters.BasicLogic.displayName) }
                 )
                 NavigationDrawerItem(
-                    modifier = Modifier.padding(horizontal = 5.dp),
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .padding(top = 5.dp),
                     colors = NavigationDrawerItemDefaults.colors(
                         unselectedContainerColor = Color(0xFF1B2838)
                     ),
@@ -89,6 +93,38 @@ fun App(
                     },
                     selected = false,
                     onClick = { appViewModel.changePage(GuideChapters.Arithmetic.displayName) }
+                )
+                NavigationDrawerItem(
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .padding(top = 5.dp),
+                    colors = NavigationDrawerItemDefaults.colors(
+                        unselectedContainerColor = Color(0xFF1B2838)
+                    ),
+                    label = {
+                        Text(
+                            text = GuideChapters.Memory.displayName,
+                            color = Color.White
+                        )
+                    },
+                    selected = false,
+                    onClick = { appViewModel.changePage(GuideChapters.Memory.displayName) }
+                )
+                NavigationDrawerItem(
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .padding(top = 5.dp),
+                    colors = NavigationDrawerItemDefaults.colors(
+                        unselectedContainerColor = Color(0xFF1B2838)
+                    ),
+                    label = {
+                        Text(
+                            text = GuideChapters.CpuArchitecture.displayName,
+                            color = Color.White
+                        )
+                    },
+                    selected = false,
+                    onClick = { appViewModel.changePage(GuideChapters.CpuArchitecture.displayName) }
                 )
             }
         }
@@ -113,6 +149,20 @@ fun App(
                     GuideScreen(
                         modifier = Modifier.padding(it),
                         guideViewModel = GuideViewModel(Datasource.arithmeticGuides)
+                    )
+                }
+
+                GuideChapters.Memory.displayName -> {
+                    GuideScreen(
+                        modifier = Modifier.padding(it),
+                        guideViewModel = GuideViewModel(Datasource.memoryGuides)
+                    )
+                }
+
+                GuideChapters.CpuArchitecture.displayName -> {
+                    GuideScreen(
+                        modifier = Modifier.padding(it),
+                        guideViewModel = GuideViewModel(Datasource.cpuArchitectureGuides)
                     )
                 }
 

@@ -10,9 +10,8 @@
     <string name="second_tick_gate">Again, as its name suggests, the logic of the Second Tick only outputs an "on" signal during the second tick of tests. In other words, when its first input receives an "on" signal and its second input receives an "off" signal. This can be achieved by using a NOT gate tied to the second input of an AND gate.</string>
     <string name="xor_gate">Slightly different from the OR gate, the XOR gate still outputs "on" when either of its inputs receives an "on" signal; however, it outputs an "off" when both inputs receive an "on" signal. In other words, OR > AND &lt; NAND.</string>
 
-    <!-- Double Trouble -->
-    <string name="double_trouble">The logic for Double Trouble is that it simply requires you to output an "on" signal when at least two of the inputs are receiving an "on" signal.</string>\
-
+    <!-- ARITHMETIC -->
+    <string name="double_trouble">The logic for Double Trouble is that it simply requires you to output an "on" signal when at least two of the inputs are receiving an "on" signal.</string>
     <string name="odd_number_of_signals">Much like the previous level, this one requires an "on" signal output when the inputs receive a particular number of "on" signals. The difference here is that we only output an "on" signal when an odd number of inputs receive an "on" signal. In other words, when either 1 or 3 inputs are "on" we output an "on" signal.</string>
     <string name="counting_signals">As the name suggests, this level requires us to count the input signals. The output component has 3 nodes on it and operates much like a Byte Maker; the first (top) node has a value of 1, the second (middle) has a value of 2, and the third (bottom) has a value of 4.</string>
     <string name="half_adder">As the name suggests, this level performs addition using the inputs. Everything is computed in binary; meaning that "1+1=2" is written as "01+01=10" with one output called "SUM" being the main value (for if the value is 0 or 1) and the other output called "CAR" being the carry (for if the value is 2).</string>
@@ -26,4 +25,18 @@
     <string name="three_bit_decoder">Here, we have a similar problem to the previous level; however, instead of choosing between 2 outputs using a single input, we have to choose between eight outputs using three inputs.</string>
     <string name="logic_engine">Here is where we put everything together. We incorporate decoders and byte-gates to create a logic engine capable of doing OR, NOR, AND, and NAND operations on two different byte arguments.</string>
 
+    <!-- MEMORY -->
+    <string name="circular_dependency">This is a tutorial level that simply requires you to create a circuit whose input depends on it\'s output. There are two checks; one where it checks if there\'s a circular dependency, and another where it checks if you\'ve used at least two components.</string>
+    <string name="delayed_lines">This level introduces a component that delays the output of its input. The solution is to simply place two of them in a row.</string>
+    <string name="odd_ticks">This level is somewhat bizarre. The requirement is to have a circuit that outputs an "on" signal only during every other tick (starting with the second tick). The solution is to have a Delay Line component feed itself through a NOT gate; and have the output take the feed from the Delay Line; meanwhile, ignoring the Input component entirely. Fun Fact: The is basically the implementation of a "clock" circuit; the more delays you have in the circuit, the more ticks between pulses.</string>
+    <string name="bit_switch">In this level, the goal is to create an XOR circuit using only two NOT gates and two SWITCH components. The SWITCH component is special because of its grey output pin, which signifies that it is not outputting anything as long as the switch itself is not enabled; meaning that multiple switch outputs can be connected to the same wire/component as long as only one switch is enabled at any given time.</string>
+    <string name="bit_inverter">This level is a bit of a riddle; you are required to output the opposite of the "Value" bit whenever the "Invert" bit is active, and simply output the "Value" otherwise. With close enough attention though, it becomes fairly obvious that the desired result is the exact same output as an XOR gate.</string>
+    <string name="input_selector">This level is very similar to the Bit Switch level; however, instead of switching between two bits, we\'re switching between two bytes.</string>
+    <string name="the_bus">In this level, we have two byte inputs, two byte outputs, and two bit inputs. The values of the two bit inputs determine which byte input we want to pass to which byte output. The concept of a bus is simply a wire that can hold a value from multiple separate sources; however, it still can only hold one value at a time. By using SWITCH components and NOT gates, we can create a controllable bus circuit.</string>
+    <string name="saving_bytes">Using the new memory component; our goal in this level is to save an entire byte of data, and output said byte on command.</string>
+    <string name="little_box">This level requires us to construct an operating set of four bytes of memory (essentially, four bytes of RAM) within a limited amount of space. Although somewhat difficult, it is entirely possible. NOTE: My solution, though it works, is not particularly pretty. If anyone has a more aesthetically pleasing solution; I\'m more than happy to verify and use it within this guide.</string>
+    <string name="counter">Here, as the level name suggests, we are required to construct a counter. Our counter must be able to not only count, but also overwrite the count value on command.</string>
+
+    <!-- CPU Architecture-->
+    <string name="arithmetic_engine">Here, we are required to modify our Logic Engine and incorporate the ability to add and subtract two inputs. The solution is relatively easy; we simply have to add a couple of byte adders (one of them with a byte negation before its input) and add some new switches to toggle those results.</string>
 </resources>
