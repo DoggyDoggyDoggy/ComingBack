@@ -1,4 +1,4 @@
-package denys.diomaxius.comingback.ui
+package denys.diomaxius.comingback.ui.guide
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

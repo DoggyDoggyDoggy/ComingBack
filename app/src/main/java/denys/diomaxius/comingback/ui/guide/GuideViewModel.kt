@@ -1,7 +1,6 @@
-package denys.diomaxius.comingback.ui
+package denys.diomaxius.comingback.ui.guide
 
 import androidx.lifecycle.ViewModel
-import denys.diomaxius.comingback.data.Datasource
 import denys.diomaxius.comingback.model.Guide
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

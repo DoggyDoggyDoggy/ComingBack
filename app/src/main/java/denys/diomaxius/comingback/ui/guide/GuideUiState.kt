@@ -1,4 +1,4 @@
-package denys.diomaxius.comingback.ui
+package denys.diomaxius.comingback.ui.guide
 
 import denys.diomaxius.comingback.data.Datasource
 import denys.diomaxius.comingback.model.Guide
