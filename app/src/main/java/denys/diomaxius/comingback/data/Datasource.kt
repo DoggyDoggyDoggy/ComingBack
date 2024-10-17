@@ -8,7 +8,8 @@ enum class GuideChapters(val displayName: String) {
     BasicLogic("BASIC LOGIC"),
     Arithmetic("ARITHMETIC"),
     Memory("MEMORY"),
-    CpuArchitecture("CPU ARCHITECTURE")
+    CpuArchitecture("CPU ARCHITECTURE"),
+    Favorite("Favorite")
 }
 
 object Datasource {
@@ -53,5 +54,9 @@ object Datasource {
 
     val cpuArchitectureGuides = listOf(
         Guide("Arithmetic Engine", R.drawable.artihmetic_engine, R.string.arithmetic_engine),
+    )
+
+    var favoriteGuides = mutableListOf<Guide>(
+        Guide("Delayed Lines", R.drawable.delayed_lines, R.string.double_trouble)
     )
 }

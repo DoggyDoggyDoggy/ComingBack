@@ -16,9 +16,7 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
-import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.NavigationDrawerItemColors
 import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -65,7 +63,7 @@ fun App(
                 NavigationDrawerItem(
                     modifier = Modifier
                         .padding(horizontal = 5.dp)
-                        .padding(top = 5.dp),
+                        .padding(top = 10.dp),
                     colors = NavigationDrawerItemDefaults.colors(
                         unselectedContainerColor = Color(0xFF1B2838)
                     ),
@@ -126,6 +124,22 @@ fun App(
                     selected = false,
                     onClick = { appViewModel.changePage(GuideChapters.CpuArchitecture.displayName) }
                 )
+                Divider(modifier = Modifier.padding(vertical = 10.dp))
+                NavigationDrawerItem(
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp),
+                    colors = NavigationDrawerItemDefaults.colors(
+                        unselectedContainerColor = Color(0xFF1B2838)
+                    ),
+                    label = {
+                        Text(
+                            text = GuideChapters.Favorite.displayName,
+                            color = Color.White
+                        )
+                    },
+                    selected = false,
+                    onClick = { appViewModel.changePage(GuideChapters.Favorite.displayName) }
+                )
             }
         }
     ) {
@@ -163,6 +177,13 @@ fun App(
                     GuideScreen(
                         modifier = Modifier.padding(it),
                         guideViewModel = GuideViewModel(Datasource.cpuArchitectureGuides)
+                    )
+                }
+
+                GuideChapters.Favorite.displayName -> {
+                    GuideScreen(
+                        modifier = Modifier.padding(it),
+                        guideViewModel = GuideViewModel(Datasource.favoriteGuides)
                     )
                 }
 
@@ -217,10 +238,4 @@ fun TopBar(
             textAlign = TextAlign.Center
         )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewApp() {
-    App()
 }

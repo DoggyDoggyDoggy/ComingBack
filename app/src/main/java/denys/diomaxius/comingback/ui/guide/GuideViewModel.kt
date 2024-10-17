@@ -1,6 +1,7 @@
 package denys.diomaxius.comingback.ui.guide
 
 import androidx.lifecycle.ViewModel
+import denys.diomaxius.comingback.data.Datasource
 import denys.diomaxius.comingback.model.Guide
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -42,6 +43,16 @@ class GuideViewModel(guides: List<Guide>) : ViewModel() {
                 description = guideList[guideNumber].description
             )
         }
+    }
+
+    fun add_favorite_guide() {
+        Datasource.favoriteGuides.add(
+            Guide(
+                image = _uiState.value.image,
+                topic = _uiState.value.topic,
+                description = _uiState.value.description
+            )
+        )
     }
 
 }
